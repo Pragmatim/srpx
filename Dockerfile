@@ -1,4 +1,9 @@
-FROM ruby:3.3.3-slim
+#################################
+# stage: install system         #
+#################################
+# pragmatim/srpx:latest is ruby:3.3.3-slim with prince-xml installed
+ARG RUBY_VERSION=3.3.7
+FROM ruby:$RUBY_VERSION-slim
 
 # Install system packages
 RUN echo "deb http://deb.debian.org/debian bookworm contrib non-free" > /etc/apt/sources.list.d/contrib.list \
